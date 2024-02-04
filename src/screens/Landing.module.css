@@ -1,0 +1,31 @@
+.Coffee_Shop_Model {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 32%;
+  display: flex;
+  justify-content: center;
+}
+
+.fade {
+  opacity: 0;
+  transform: translateY(20vh);
+  /* visibility: hidden; */
+}
+body {
+  opacity: 1;
+  transform: none !important;
+  /* visibility: visible; */
+  transition: opacity 5s cubic-bezier(0.45, 0.53, 0.58, 1.23),
+    transform 5s cubic-bezier(0.45, 0.53, 0.58, 1.23);
+  will-change: opacity, visibility;
+}
+
+/* @keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
