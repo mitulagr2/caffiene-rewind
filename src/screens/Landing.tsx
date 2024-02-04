@@ -1,12 +1,16 @@
 import styles from "./Landing.module.css";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
+import Button from "../components/Button/Button";
+
 const Landing = () => {
   console.log("landing");
+  const navigate = useNavigate();
   let toRotate = false;
 
   useEffect(() => {
@@ -102,9 +106,13 @@ const Landing = () => {
           velocity.y += 2.0 * delta;
           if (camera.position.z < 2.5) {
             moveForward = false;
-            // push('/page2');
-            // window.location.href = "/page2";
-            console.log("HERE");
+            cancelAnimationFrame(animationId);
+            while (scene.children.length > 0) {
+              scene.remove(scene.children[0]);
+            }
+            document.querySelector("body canvas")?.remove();
+            navigate("/warp");
+            document.querySelector("body")?.classList.remove(styles.fade);
           }
           camera.translateZ(velocity.z * delta);
           camera.translateY(velocity.y * delta);
@@ -116,14 +124,10 @@ const Landing = () => {
     animate();
   }, []);
   return (
-    <div className={styles.Coffee_Shop_Model}>
-      <button
-        onClick={() => {
-          toRotate = true;
-        }}
-      >
+    <div className={styles.Banner}>
+      <Button style={{ color: "red" }} onClick={() => (toRotate = true)}>
         Enter
-      </button>
+      </Button>
     </div>
   );
 };
