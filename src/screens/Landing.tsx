@@ -6,6 +6,8 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
+import Button from "../components/Button/Button";
+
 const Landing = () => {
   console.log("landing");
   const navigate = useNavigate();
@@ -123,13 +125,9 @@ const Landing = () => {
   }, []);
   return (
     <div className={styles.Banner}>
-      <button
-        onClick={() => {
-          toRotate = true;
-        }}
-      >
+      <Button style={{ color: "red" }} onClick={() => (toRotate = true)}>
         Enter
-      </button>
+      </Button>
     </div>
   );
 };
