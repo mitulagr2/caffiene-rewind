@@ -12,7 +12,7 @@
   height: 353px;
   margin-left: -1px;
   margin-top: -1px;
-  font-family: "Bayon";
+  font-family: "Bayon", sans-serif;
   font-size: 48px;
   display: flex;
   flex-direction: column;
@@ -30,4 +30,51 @@
   margin-top: -1px;
   width: 176px;
   height: 254px;
+}
+
+.Vertical_Desc {
+  writing-mode: vertical-lr;
+  rotate: 180deg;
+  font-family: "Sedgwick Ave Display", cursive;
+  font-size: 64px;
+  color: var(--color-secondary);
+  width: 104px;
+  padding-top: 211px;
+}
+.Vertical_Desc button {
+  position: absolute;
+  top: -97px;
+  right: -1px;
+}
+
+.InfoTextWrapper {
+  /* border: 2px solid red; */
+}
+
+.Banner {
+  display: flex;
+}
+.Banner .Title {
+  font-family: "Sedgwick Ave Display", cursive;
+  font-size: 96px;
+  margin-left: 240px;
+  margin-top: -48px;
+  text-wrap: nowrap;
+}
+.Banner .Subtitle {
+  font-family: "Bayon", sans-serif;
+  font-size: 24px;
+  margin-left: 109px;
+  margin-top: -19px;
+}
+.Banner .Line {
+  border-right: 1px solid var(--color-text);
+  margin-top: -97px;
+}
+
+.InfoText {
+  border: 1px solid var(--color-text);
+  width: 400px;
+  height: 400px;
+  margin-top: -1px;
 }

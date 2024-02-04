@@ -1,7 +1,7 @@
 import styles from "./Button.module.css";
 
 interface ButtonProps {
-  style: {};
+  style?: {};
   onClick: () => void;
   children: React.ReactNode;
 }
