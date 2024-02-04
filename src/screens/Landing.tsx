@@ -122,7 +122,7 @@ const Landing = () => {
     animate();
   }, []);
   return (
-    <div className={styles.Coffee_Shop_Model}>
+    <div className={styles.Banner}>
       <button
         onClick={() => {
           toRotate = true;
