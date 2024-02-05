@@ -1,3 +1,5 @@
+import { useState } from "react";
+import mainInfo from "../../content/mainInfo";
 import Button from "../Button/Button";
 import styles from "./InfoSection.module.css";
 import BestSeller from "./fragments/BestSeller";
@@ -5,13 +7,14 @@ import LaneReel from "./fragments/LaneReel";
 import TextTabs from "./fragments/TextTabs";
 
 const InfoSection = () => {
-  console.log("info");
+  console.log("info", mainInfo);
+  const [selectedTab, setSelectedTab] = useState(0);
   return (
     <>
       <div className={styles.Wrapper}>
         <div>
           <LaneReel />
-          <TextTabs />
+          <TextTabs selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
         </div>
         <div className={styles.Vertical_Desc}>
           <Button
@@ -43,19 +46,12 @@ const InfoSection = () => {
               <img src="/cold_coffee1.png" alt="cold coffee"></img>
             </Button>
             <div>
-              <div className={styles.Title}>Caffiene Rewind</div>
-              <div className={styles.Subtitle}>
-                Where every cup is a trip down memory lane.
-              </div>
+              <div className={styles.Title}>{mainInfo.title}</div>
+              <div className={styles.Subtitle}>{mainInfo.subtitle}</div>
             </div>
           </div>
           <div className={styles.InfoText}>
-            <div>
-              Welcome to Caffeine Rewind, where every sip takes you back in
-              time! We blend the warmth of nostalgia with the finest coffee
-              beans to create timeless classics and unforgettable experiences.
-              Add cursor pointer.
-            </div>
+            <div>{mainInfo.textTabs[selectedTab].text}</div>
           </div>
           <BestSeller />
         </div>

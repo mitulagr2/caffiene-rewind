@@ -10,19 +10,42 @@
 .LaneReel {
   border: 1px solid var(--color-text);
   width: 176px;
-  height: 353px;
+  height: 385px;
   margin-left: -1px;
   margin-top: -1px;
   font-family: "Bayon", sans-serif;
   font-size: 48px;
+  overflow: hidden;
+}
+
+.LaneReel div {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 32px;
+  -webkit-animation: scroll 2s linear infinite;
+  -moz-animation: scroll 2s linear infinite;
+  animation: scroll 2s linear infinite;
 }
 
 .LaneReel p {
   margin: -16px 0;
+}
+
+@-moz-keyframes scroll {
+  100% {
+    -moz-transform: translateY(-56px);
+  }
+}
+@-webkit-keyframes scroll {
+  100% {
+    -webkit-transform: translateY(-56px);
+  }
+}
+@keyframes scroll {
+  100% {
+    -webkit-transform: translateY(-56px);
+    transform: translateY(-56px);
+  }
 }
 
 .TextTabs {
@@ -90,10 +113,49 @@
 
 .BestSeller {
   border: 1px solid var(--color-text);
-  width: 400px;
+  width: 398px;
   height: 400px;
   margin-top: -1px;
   margin-left: 217px;
+  background-color: var(--color-background);
+  position: relative;
+}
+
+.BestSeller img {
+  position: absolute;
+  z-index: 1;
+}
+
+.BestSeller svg {
+  position: absolute;
+  left: -84px;
+  top: -84px;
+  -webkit-animation: spin 32s linear infinite;
+  -moz-animation: spin 32s linear infinite;
+  animation: spin 32s linear infinite;
+}
+
+.TextRing {
+  fill: var(--color-secondary);
+  font-size: 16px;
+  font-family: "Bayon", sans-serif;
+}
+
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
 
 .OrderText {
