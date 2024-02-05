@@ -21,4 +21,6 @@ const mainInfo = {
   ],
 };
 
+export const textTabs = mainInfo.textTabs;
+
 export default mainInfo;

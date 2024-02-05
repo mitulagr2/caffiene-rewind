@@ -1,7 +1,41 @@
 .Wrapper {
   border: 1px solid var(--color-text);
-  /* width: 1280px; */
   height: 448px;
   margin-top: 384px;
   margin-left: -287px;
+  position: relative;
+  background-color: var(--color-background);
+}
+
+.Categories {
+  position: absolute;
+  top: 12px;
+  left: -185px;
+}
+
+.Listing {
+  display: inline-flex;
+  flex-wrap: wrap;
+  padding: 48px 8px;
+  writing-mode: vertical-lr;
+  align-content: flex-start;
+}
+
+.MenuItem {
+  /* border: 1px solid red; */
+  width: min-content;
+  margin: 16px 24px;
+  writing-mode: horizontal-tb;
+}
+
+.ItemPrice {
+  font-family: "Bayon", sans-serif;
+  font-size: 24px;
+}
+
+.ItemDesc {
+  font-family: "Hi Melody", sans-serif;
+  font-size: 24px;
+  text-wrap: wrap;
+  /* width: min-content; */
 }

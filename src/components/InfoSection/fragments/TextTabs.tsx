@@ -1,7 +1,9 @@
 import styles from "../InfoSection.module.css";
 import Button from "../../Button/Button";
+import { textTabs } from "../../../content/mainInfo";
 
 const TextTabs = () => {
+  console.log(textTabs);
   return (
     <div className={styles.TextTabs}>
       <Button
@@ -13,47 +15,30 @@ const TextTabs = () => {
           marginBottom: "22px",
           fontSize: "48px",
         }}
-        onClick={() => {}}
-      >
-        Home
-      </Button>
-      <Button
-        style={{
-          border: "none",
-          fontFamily: "'Sedgwick Ave Display', cursive",
-          margin: "2px 0",
-          marginLeft: "24px",
-          padding: "0",
+        onClick={() => {
+          console.log(0);
         }}
-        onClick={() => {}}
       >
-        Menu
+        {textTabs[0].name}
       </Button>
-      <Button
-        style={{
-          border: "none",
-          fontFamily: "'Sedgwick Ave Display', cursive",
-          margin: "2px 0",
-          marginLeft: "24px",
-          padding: "0",
-          textWrap: "nowrap",
-        }}
-        onClick={() => {}}
-      >
-        Our brews
-      </Button>
-      <Button
-        style={{
-          border: "none",
-          fontFamily: "'Sedgwick Ave Display', cursive",
-          margin: "2px 0",
-          marginLeft: "24px",
-          padding: "0",
-        }}
-        onClick={() => {}}
-      >
-        Visit us
-      </Button>
+      {textTabs.slice(1).map(({ name }, i) => (
+        <Button
+          key={i}
+          style={{
+            border: "none",
+            fontFamily: "'Sedgwick Ave Display', cursive",
+            margin: "2px 0",
+            marginLeft: "24px",
+            padding: "0",
+            textWrap: "nowrap",
+          }}
+          onClick={() => {
+            console.log(i + 1);
+          }}
+        >
+          {name}
+        </Button>
+      ))}
     </div>
   );
 };
