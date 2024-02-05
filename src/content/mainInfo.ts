@@ -12,7 +12,7 @@ const mainInfo = {
     },
     {
       name: "Our brews",
-      text: "Caffeine Rewind is a step back in time. From our decor featuring iconic memorabilia to the classic tunes spinning on our record player, every detail is designed to evoke a sense of nostalgia. It's a place where memories are made, and the simple joys of the past are celebrated.",
+      text: "From our decor featuring iconic memorabilia to the classic tunes spinning on our record player, every detail is designed to evoke a sense of nostalgia. It's a place where memories are made, and the simple joys of the past are celebrated.",
     },
     {
       name: "Visit us",

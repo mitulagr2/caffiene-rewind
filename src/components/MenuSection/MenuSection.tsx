@@ -55,6 +55,9 @@ const MenuSection = () => {
           <MenuItem key={i} item={{ ...item, price: +item.price }} />
         ))}
       </div>
+      <div className={styles.box}></div>
+      <img src="/favicon.svg" alt="favicon" className={styles.logo}></img>
+      <div className={styles.Line}></div>
     </div>
   );
 };
