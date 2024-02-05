@@ -40,7 +40,7 @@ const menuInfo = [
       {
         name: "Rockabilly Iced Latte",
         price: "4.25",
-        desc: "",
+        desc: "Chilled latte with your choice of syrup, served over ice.",
       },
       {
         name: "Twist & Shout Frappe",
@@ -81,6 +81,11 @@ const menuInfo = [
         name: "Bagel with Cream Cheese",
         price: 2.5,
         desc: "A classic, toasted bagel served with cream cheese.",
+      },
+      {
+        name: "Disco Nachos",
+        price: 6.0,
+        desc: "Tortilla chips with cheese, salsa, and a sprinkle of retro vibes.",
       },
       {
         name: "Vinyl Record Pancakes",

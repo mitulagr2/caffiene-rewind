@@ -1,23 +1,27 @@
 import styles from "../InfoSection.module.css";
 import Button from "../../Button/Button";
 import { textTabs } from "../../../content/mainInfo";
+import { SetStateAction } from "react";
 
-const TextTabs = () => {
+interface TextTabProps {
+  selectedTab: number;
+  setSelectedTab: React.Dispatch<SetStateAction<number>>;
+}
+
+const TextTabs = ({ selectedTab, setSelectedTab }: TextTabProps) => {
   console.log(textTabs);
   return (
     <div className={styles.TextTabs}>
       <Button
         style={{
-          color: "red",
+          ...(selectedTab === 0 && { color: "red" }),
           marginTop: "-1px",
           width: "201px",
           marginLeft: "-82px",
           marginBottom: "22px",
           fontSize: "48px",
         }}
-        onClick={() => {
-          console.log(0);
-        }}
+        onClick={() => setSelectedTab(() => 0)}
       >
         {textTabs[0].name}
       </Button>
@@ -25,6 +29,7 @@ const TextTabs = () => {
         <Button
           key={i}
           style={{
+            ...(selectedTab === i + 1 && { color: "red" }),
             border: "none",
             fontFamily: "'Sedgwick Ave Display', cursive",
             margin: "2px 0",
@@ -32,9 +37,7 @@ const TextTabs = () => {
             padding: "0",
             textWrap: "nowrap",
           }}
-          onClick={() => {
-            console.log(i + 1);
-          }}
+          onClick={() => setSelectedTab(() => i + 1)}
         >
           {name}
         </Button>

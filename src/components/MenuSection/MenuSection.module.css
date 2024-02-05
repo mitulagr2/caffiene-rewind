@@ -22,20 +22,22 @@
 }
 
 .MenuItem {
-  /* border: 1px solid red; */
   width: min-content;
   margin: 16px 24px;
   writing-mode: horizontal-tb;
+  flex-grow: 1;
 }
 
 .ItemPrice {
   font-family: "Bayon", sans-serif;
   font-size: 24px;
+  margin-left: 64px;
 }
 
 .ItemDesc {
   font-family: "Hi Melody", sans-serif;
   font-size: 24px;
   text-wrap: wrap;
+  text-align: start;
   /* width: min-content; */
 }
