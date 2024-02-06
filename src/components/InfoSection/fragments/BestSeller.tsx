@@ -3,7 +3,6 @@ import styles from "../InfoSection.module.css";
 const BestSeller = () => {
   return (
     <div className={styles.BestSeller}>
-      {/* <p className={styles.TextRing}></p> */}
       <svg width="168" height="168" viewBox="0 0 168 168">
         <path
           id="curve"

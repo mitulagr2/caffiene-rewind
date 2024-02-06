@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useAppSelector, useAppDispatch } from "../../app/hooks";
+import { setFoodTab } from "../../features/menu/menuSlice";
 import mainInfo from "../../content/mainInfo";
 import Button from "../Button/Button";
 import styles from "./InfoSection.module.css";
@@ -8,13 +9,15 @@ import TextTabs from "./fragments/TextTabs";
 
 const InfoSection = () => {
   console.log("info", mainInfo);
-  const [selectedTab, setSelectedTab] = useState(0);
+  const curTextTab = useAppSelector((state) => state.menu.curTextTab);
+  const dispatch = useAppDispatch();
+
   return (
     <>
       <div className={styles.Wrapper}>
         <div>
           <LaneReel />
-          <TextTabs selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
+          <TextTabs />
         </div>
         <div className={styles.Vertical_Desc}>
           <Button
@@ -24,7 +27,7 @@ const InfoSection = () => {
               height: "97px",
               rotate: "180deg",
             }}
-            onClick={() => {}}
+            onClick={() => dispatch(setFoodTab(0))}
           >
             <img src="/hot_coffee.png" alt="hot coffee"></img>
           </Button>
@@ -41,7 +44,7 @@ const InfoSection = () => {
                 marginLeft: "-1px",
                 marginTop: "-1px",
               }}
-              onClick={() => {}}
+              onClick={() => dispatch(setFoodTab(1))}
             >
               <img src="/cold_coffee1.png" alt="cold coffee"></img>
             </Button>
@@ -51,7 +54,7 @@ const InfoSection = () => {
             </div>
           </div>
           <div className={styles.InfoText}>
-            <div>{mainInfo.textTabs[selectedTab].text}</div>
+            <div>{mainInfo.textTabs[curTextTab].text}</div>
           </div>
           <BestSeller />
         </div>
@@ -66,7 +69,7 @@ const InfoSection = () => {
           left: "1655px",
           top: "-1px",
         }}
-        onClick={() => {}}
+        onClick={() => dispatch(setFoodTab(2))}
       >
         <img src="/noodles.png" alt="noodles"></img>
       </Button>

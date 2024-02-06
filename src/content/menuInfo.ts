@@ -34,17 +34,17 @@ const menuInfo = [
     items: [
       {
         name: "Sock Hop Iced Coffee",
-        price: "3.0",
+        price: 3.0,
         desc: "Refreshing and cool, a perfect pick-me-up on a hot day.",
       },
       {
         name: "Rockabilly Iced Latte",
-        price: "4.25",
+        price: 4.25,
         desc: "Chilled latte with your choice of syrup, served over ice.",
       },
       {
         name: "Twist & Shout Frappe",
-        price: "4.75",
+        price: 4.75,
         desc: "A creamy, blended ice frappe, available in coffee, caramel, or mocha.",
       },
     ],

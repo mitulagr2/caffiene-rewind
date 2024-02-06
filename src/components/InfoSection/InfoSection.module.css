@@ -1,6 +1,6 @@
 .Wrapper {
   border: 1px solid var(--color-text);
-  width: 1280px;
+  flex: 0 0 1280px;
   height: 640px;
   margin-left: 80px;
   display: flex;
@@ -130,6 +130,7 @@
   position: absolute;
   left: -84px;
   top: -84px;
+  mix-blend-mode: luminosity;
   -webkit-animation: spin 32s linear infinite;
   -moz-animation: spin 32s linear infinite;
   animation: spin 32s linear infinite;
