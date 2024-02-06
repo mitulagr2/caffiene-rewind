@@ -17,3 +17,24 @@ body {
   width: 0px;
   background: transparent;
 }
+
+#cursor-border {
+  --size: 50px;
+  position: fixed;
+  top: calc(var(--size) / -2);
+  left: calc(var(--size) / -2);
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px var(--color-text);
+  pointer-events: none;
+  transition: top 0.15s ease-out, left 0.15s ease-out, width 0.15s ease-out,
+    height 0.15s ease-out, background-color 0.15s ease-out;
+  z-index: 999;
+  background-color: var(--color-background);
+  mix-blend-mode: difference;
+}
+
+.clickable:hover {
+  color: var(--color-secondary);
+}

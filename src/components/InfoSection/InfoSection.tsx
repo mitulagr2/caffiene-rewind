@@ -26,6 +26,7 @@ const InfoSection = () => {
               width: "97px",
               height: "97px",
               rotate: "180deg",
+              backgroundColor: "unset",
             }}
             onClick={() => dispatch(setFoodTab(0))}
           >
@@ -43,6 +44,7 @@ const InfoSection = () => {
                 height: "97px",
                 marginLeft: "-1px",
                 marginTop: "-1px",
+                backgroundColor: "unset",
               }}
               onClick={() => dispatch(setFoodTab(1))}
             >
@@ -68,6 +70,7 @@ const InfoSection = () => {
           position: "absolute",
           left: "1655px",
           top: "-1px",
+          backgroundColor: "unset",
         }}
         onClick={() => dispatch(setFoodTab(2))}
       >

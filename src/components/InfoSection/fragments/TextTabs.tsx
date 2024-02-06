@@ -27,6 +27,7 @@ const TextTabs = () => {
       {textTabs.slice(1).map(({ name }, i) => (
         <Button
           key={i}
+          classname="clickable"
           style={{
             ...(curTextTab === i + 1 && { color: "var(--color-secondary)" }),
             border: "none",
@@ -35,6 +36,7 @@ const TextTabs = () => {
             marginLeft: "24px",
             padding: "0",
             textWrap: "nowrap",
+            backgroundColor: "unset",
           }}
           onClick={() => dispatch(setTextTab(i + 1))}
         >

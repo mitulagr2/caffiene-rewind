@@ -7,11 +7,8 @@ import styles from "../CartSection.module.css";
 const itemStyle = {
   border: "none",
   padding: "0",
-  display: "flex",
-  width: "100%",
-  justifyContent: "space-between",
   marginBottom: "32px",
-  alignItems: "baseline",
+  backgroundColor: "unset",
 };
 
 const List = () => {
@@ -33,33 +30,38 @@ const List = () => {
           const item = menuInfo[(+id / 10) >> 0].items[+id % 10];
           return (
             <li key={id}>
-              <Button
-                style={itemStyle}
-                onClick={() => dispatch(removeFromCart(+id))}
-              >
-                <p>{item.name}</p>
+              <div className={styles.Item}>
+                <Button
+                  classname="clickable"
+                  style={itemStyle}
+                  onClick={() => dispatch(removeFromCart(+id))}
+                >
+                  <p>{item.name}</p>
+                </Button>
                 <span>
                   {count} × ${item.price.toFixed(2)}
                 </span>
-              </Button>
+              </div>
             </li>
           );
         })}
       </ol>
       <div className={styles.BottomContainer}>
         <div className={styles.TipBox}>
-          <Button
-            style={{
-              border: "none",
-              width: "100%",
-              justifyContent: "space-between",
-              padding: "0",
-            }}
-            onClick={() => dispatch(addTip())}
-          >
-            <p>Tip Jar</p>
+          <div className={styles.TipTitle}>
+            <Button
+              classname="clickable"
+              style={{
+                border: "none",
+                padding: "0",
+                backgroundColor: "unset",
+              }}
+              onClick={() => dispatch(addTip())}
+            >
+              <p>Tip Jar</p>
+            </Button>
             <span>${tip.toFixed(2)}</span>
-          </Button>
+          </div>
           <div className={styles.TipText}>
             Pull up a chair, take a sip, and let the Caffeine Rewind experience
             begin!

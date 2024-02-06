@@ -47,7 +47,13 @@
   width: calc(100% - 96px);
 }
 
-.CartWrapper ol p {
+.Item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.Item p {
   margin: 0;
   margin-left: 40px;
   font-family: "Sedgwick Ave Display", cursive;
@@ -66,7 +72,13 @@
   margin-bottom: 49px;
   margin-left: 13px;
 }
-.TipBox p {
+
+.TipTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.TipTitle p {
   margin: 0;
   font-family: "Sedgwick Ave Display", cursive;
   font-size: 32px;

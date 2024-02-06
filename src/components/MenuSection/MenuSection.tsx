@@ -40,6 +40,7 @@ const MenuSection = () => {
           position: "absolute",
           left: "-97px",
           top: "-97px",
+          backgroundColor: "unset",
         }}
         onClick={() => dispatch(setFoodTab(1))}
       >
@@ -50,6 +51,7 @@ const MenuSection = () => {
         {menuInfo.map(({ type }, i) => (
           <Button
             key={i}
+            classname="clickable"
             style={{
               ...((!isActiveSearch || filtered.length < 1) &&
                 curFoodTab === i && { color: "var(--color-secondary)" }),
@@ -58,6 +60,7 @@ const MenuSection = () => {
               textWrap: "nowrap",
               border: "none",
               marginBottom: "-8px",
+              backgroundColor: "unset",
             }}
             onClick={() => dispatch(setFoodTab(i))}
           >
