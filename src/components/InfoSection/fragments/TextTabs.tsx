@@ -13,7 +13,7 @@ const TextTabs = () => {
     <div className={styles.TextTabs}>
       <Button
         style={{
-          ...(curTextTab === 0 && { color: "red" }),
+          ...(curTextTab === 0 && { color: "var(--color-secondary)" }),
           marginTop: "-1px",
           width: "201px",
           marginLeft: "-82px",
@@ -28,7 +28,7 @@ const TextTabs = () => {
         <Button
           key={i}
           style={{
-            ...(curTextTab === i + 1 && { color: "red" }),
+            ...(curTextTab === i + 1 && { color: "var(--color-secondary)" }),
             border: "none",
             fontFamily: "'Sedgwick Ave Display', cursive",
             margin: "2px 0",

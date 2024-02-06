@@ -8,7 +8,9 @@ import Search from "./fragments/Search";
 
 const MenuSection = () => {
   console.log("menu", menuInfo);
-  const { curFoodTab, query } = useAppSelector((state) => state.menu);
+  const { curFoodTab, query, isActiveSearch } = useAppSelector(
+    (state) => state.menu
+  );
   const dispatch = useAppDispatch();
 
   const filtered = query
@@ -49,7 +51,8 @@ const MenuSection = () => {
           <Button
             key={i}
             style={{
-              ...(curFoodTab === i && { color: "red" }),
+              ...((!isActiveSearch || filtered.length < 1) &&
+                curFoodTab === i && { color: "var(--color-secondary)" }),
               padding: "0",
               fontSize: "20px",
               textWrap: "nowrap",

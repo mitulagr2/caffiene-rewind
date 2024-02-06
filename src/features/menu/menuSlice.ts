@@ -5,12 +5,14 @@ export interface MenuState {
   curTextTab: number;
   curFoodTab: number;
   query: string;
+  isActiveSearch: boolean;
 }
 
 const initialState: MenuState = {
   curTextTab: 0,
   curFoodTab: 0,
   query: "",
+  isActiveSearch: false,
 };
 
 export const menuSlice = createSlice({
@@ -29,10 +31,16 @@ export const menuSlice = createSlice({
     clearQuery: (state) => {
       state.query = "";
     },
+    toggleSearch: (state) => {
+      if (state.isActiveSearch) {
+        state.isActiveSearch = false;
+        state.query = "";
+      } else state.isActiveSearch = true;
+    },
   },
 });
 
-export const { setTextTab, setFoodTab, setQuery, clearQuery } =
+export const { setTextTab, setFoodTab, setQuery, clearQuery, toggleSearch } =
   menuSlice.actions;
 
 export default menuSlice.reducer;

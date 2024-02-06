@@ -125,7 +125,10 @@ const Landing = () => {
   }, []);
   return (
     <div className={styles.Banner}>
-      <Button style={{ color: "red" }} onClick={() => (toRotate = true)}>
+      <Button
+        style={{ color: "var(--color-secondary)" }}
+        onClick={() => (toRotate = true)}
+      >
         Enter
       </Button>
     </div>
