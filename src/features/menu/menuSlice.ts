@@ -4,11 +4,13 @@ import type { PayloadAction } from "@reduxjs/toolkit";
 export interface MenuState {
   curTextTab: number;
   curFoodTab: number;
+  query: string;
 }
 
 const initialState: MenuState = {
   curTextTab: 0,
   curFoodTab: 0,
+  query: "",
 };
 
 export const menuSlice = createSlice({
@@ -21,9 +23,16 @@ export const menuSlice = createSlice({
     setFoodTab: (state, action: PayloadAction<number>) => {
       state.curFoodTab = action.payload;
     },
+    setQuery: (state, action: PayloadAction<string>) => {
+      state.query = action.payload;
+    },
+    clearQuery: (state) => {
+      state.query = "";
+    },
   },
 });
 
-export const { setTextTab, setFoodTab } = menuSlice.actions;
+export const { setTextTab, setFoodTab, setQuery, clearQuery } =
+  menuSlice.actions;
 
 export default menuSlice.reducer;

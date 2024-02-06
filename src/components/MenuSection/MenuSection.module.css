@@ -7,6 +7,29 @@
   background-color: var(--color-background);
 }
 
+.Search {
+  position: absolute;
+  height: 60px;
+  left: -1px;
+  top: -156px;
+  display: flex;
+}
+
+.QueryInput {
+  margin-left: -1px;
+  padding: 0;
+  padding-inline: 24px;
+  font-size: 32px;
+  padding-top: 8px;
+  /* caret-color: transparent; */
+  border: 1px solid var(--color-text);
+  font-family: "Hi Melody", sans-serif;
+  outline: none;
+  background-color: var(--color-background);
+  height: 50px;
+  min-width: 219px;
+}
+
 .Categories {
   position: absolute;
   top: 12px;
