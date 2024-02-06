@@ -7,6 +7,12 @@
   height: 768px;
   position: relative;
   display: flex;
+}
+
+.ListWrapper {
+  width: 0;
+  overflow: hidden;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
@@ -96,4 +102,13 @@
 .TotalBox div:last-of-type {
   margin-top: -10px;
   cursor: default;
+}
+
+.CheckoutWrapper {
+  overflow: hidden;
+  width: 0;
+}
+
+.FullWidth {
+  width: 512px !important;
 }
