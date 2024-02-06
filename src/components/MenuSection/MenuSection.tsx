@@ -11,20 +11,23 @@ const MenuSection = () => {
   const { curFoodTab, query } = useAppSelector((state) => state.menu);
   const dispatch = useAppDispatch();
 
-  const filtered = menuInfo.reduce(
-    (list, { items }) => [
-      ...list,
-      ...items.filter(({ name, desc }) =>
-        (name + desc).toLowerCase().includes(query)
-      ),
-    ],
-    [] as {
-      name: string;
-      price: number;
-      desc: string;
-    }[]
-  );
-  const items = query ? filtered : menuInfo[curFoodTab].items;
+  const filtered = query
+    ? menuInfo.reduce(
+        (list, { items }) => [
+          ...list,
+          ...items.filter(({ name, desc }) =>
+            (name + desc).toLowerCase().includes(query)
+          ),
+        ],
+        [] as {
+          name: string;
+          price: number;
+          desc: string;
+        }[]
+      )
+    : [];
+  const items =
+    query && filtered.length > 0 ? filtered : menuInfo[curFoodTab].items;
 
   return (
     <div className={styles.Wrapper}>

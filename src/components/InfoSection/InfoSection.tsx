@@ -33,7 +33,7 @@ const InfoSection = () => {
           </Button>
           Retro Cafe
         </div>
-        <div className={styles.InfoTextWrapper}>
+        <div>
           <div className={styles.Banner}>
             <div className={styles.Line}></div>
             <Button

@@ -16,6 +16,7 @@
   font-family: "Bayon", sans-serif;
   font-size: 48px;
   overflow: hidden;
+  cursor: default;
 }
 
 .LaneReel div {
@@ -64,6 +65,7 @@
   color: var(--color-secondary);
   width: 104px;
   padding-top: 211px;
+  cursor: default;
 }
 .Vertical_Desc button {
   position: absolute;
@@ -71,12 +73,9 @@
   right: -1px;
 }
 
-/* .InfoTextWrapper {
-  border: 2px solid red;
-} */
-
 .Banner {
   display: flex;
+  cursor: default;
 }
 .Banner .Title {
   font-family: "Sedgwick Ave Display", cursive;
@@ -104,6 +103,7 @@
   font-family: "Hi Melody", sans-serif;
   font-size: 24px;
   background-color: var(--color-highlight);
+  cursor: default;
 }
 .InfoText div {
   width: 256px;
@@ -140,6 +140,7 @@
   fill: var(--color-secondary);
   font-size: 16px;
   font-family: "Bayon", sans-serif;
+  cursor: default;
 }
 
 @-moz-keyframes spin {
@@ -168,4 +169,5 @@
   position: absolute;
   right: 0;
   top: 128px;
+  cursor: default;
 }
