@@ -9,7 +9,6 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import Button from "../components/Button/Button";
 
 const Landing = () => {
-  console.log("landing");
   const navigate = useNavigate();
   let toRotate = false;
 

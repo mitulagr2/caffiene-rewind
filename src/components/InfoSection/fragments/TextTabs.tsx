@@ -5,7 +5,6 @@ import Button from "../../Button/Button";
 import { textTabs } from "../../../content/mainInfo";
 
 const TextTabs = () => {
-  console.log(textTabs);
   const curTextTab = useAppSelector((state) => state.menu.curTextTab);
   const dispatch = useAppDispatch();
 

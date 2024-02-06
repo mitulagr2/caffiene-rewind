@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useAppSelector, useAppDispatch } from "../../../app/hooks";
 import menuInfo from "../../../content/menuInfo";
 import { removeFromCart, addTip } from "../../../features/cart/cartSlice";
@@ -19,6 +20,15 @@ const List = () => {
       (sum += menuInfo[(+id / 10) >> 0].items[+id % 10].price * count),
     0
   );
+
+  useEffect(() => {
+    document
+      .querySelector(".cartSection ol")!
+      .addEventListener("wheel", (e) => {
+        if ((e as WheelEvent).deltaY) e.stopPropagation();
+        else e.preventDefault();
+      });
+  }, []);
 
   return (
     <div className={`cartSection ${styles.ListWrapper} ${styles.FullWidth}`}>

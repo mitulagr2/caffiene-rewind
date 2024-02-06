@@ -8,7 +8,6 @@ import LaneReel from "./fragments/LaneReel";
 import TextTabs from "./fragments/TextTabs";
 
 const InfoSection = () => {
-  console.log("info", mainInfo);
   const curTextTab = useAppSelector((state) => state.menu.curTextTab);
   const dispatch = useAppDispatch();
 

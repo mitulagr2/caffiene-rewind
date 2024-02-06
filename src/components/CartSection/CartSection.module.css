@@ -40,7 +40,6 @@
 .CartWrapper ol {
   padding-inline-start: 64px;
   margin: 64px 32px 8px 0;
-  height: 433px;
   overflow-y: auto;
   -webkit-mask-image: linear-gradient(black, transparent);
   mask-image: linear-gradient(black 88%, transparent);

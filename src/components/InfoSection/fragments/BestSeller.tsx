@@ -42,9 +42,15 @@ const BestSeller = () => {
           (document.querySelector("#heartIcon") as HTMLElement).classList.add(
             styles["is-active"]
           );
+          localStorage.liked = 1;
         }}
       >
-        <div id="heartIcon" className={styles.HeartIcon}></div>
+        <div
+          id="heartIcon"
+          className={`${styles.HeartIcon} ${
+            localStorage.liked ? styles["is-active"] : ""
+          }`}
+        ></div>
       </Button>
       <div className={styles.TextMask}>
         <div className={styles.ScrollText}>

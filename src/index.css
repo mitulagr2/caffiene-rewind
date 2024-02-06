@@ -33,6 +33,7 @@ body {
   z-index: 999;
   background-color: var(--color-background);
   mix-blend-mode: difference;
+  opacity: 0.9;
 }
 
 .clickable:hover {

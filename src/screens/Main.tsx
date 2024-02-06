@@ -5,7 +5,6 @@ import CartSection from "../components/CartSection/CartSection";
 import EndSection from "../components/EndSection/EndSection";
 
 const Main = () => {
-  console.log("main");
   return (
     <div className={styles.MainWrapper}>
       <InfoSection />

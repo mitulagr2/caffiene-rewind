@@ -7,7 +7,6 @@ import MenuItem from "./fragments/MenuItem";
 import Search from "./fragments/Search";
 
 const MenuSection = () => {
-  console.log("menu", menuInfo);
   const { curFoodTab, query, isActiveSearch } = useAppSelector(
     (state) => state.menu
   );
