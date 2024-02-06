@@ -11,3 +11,9 @@ body {
   background: var(--color-background);
   overflow-y: hidden;
 }
+
+::-webkit-scrollbar {
+  display: none;
+  width: 0px;
+  background: transparent;
+}

@@ -15,9 +15,9 @@ const itemStyle = {
 };
 
 const CartSection = () => {
-  const cart = useAppSelector((state) => state.cart);
+  const { items, tip } = useAppSelector((state) => state.cart);
   const dispatch = useAppDispatch();
-  const total = Object.entries(cart.items).reduce(
+  const total = Object.entries(items).reduce(
     (sum, [id, count]) =>
       (sum += menuInfo[(+id / 10) >> 0].items[+id % 10].price * count),
     0
@@ -28,7 +28,7 @@ const CartSection = () => {
       <p className={styles.TopText}>Your</p>
       <p className={styles.BottomText}>Cart</p>
       <ol type="I">
-        {Object.entries(cart.items).map(([id, count]) => {
+        {Object.entries(items).map(([id, count]) => {
           if (count < 1) return <></>;
           const item = menuInfo[(+id / 10) >> 0].items[+id % 10];
           return (
@@ -58,7 +58,7 @@ const CartSection = () => {
             onClick={() => dispatch(addTip())}
           >
             <p>Tip Jar</p>
-            <span>${cart.tip.toFixed(2)}</span>
+            <span>${tip.toFixed(2)}</span>
           </Button>
           <div className={styles.TipText}>
             Pull up a chair, take a sip, and let the Caffeine Rewind experience
@@ -69,7 +69,7 @@ const CartSection = () => {
         <div className={styles.TotalBox}>
           <div className={styles.TotalText}>Total</div>
           <div className={styles.Line}></div>
-          <div>${(total + cart.tip).toFixed(2)}</div>
+          <div>${(total + tip).toFixed(2)}</div>
         </div>
         <Button
           style={{
