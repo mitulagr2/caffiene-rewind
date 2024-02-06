@@ -1,11 +1,15 @@
+import { useAppDispatch } from "../../../app/hooks";
+import { addToCart } from "../../../features/cart/cartSlice";
 import Button from "../../Button/Button";
 import styles from "../MenuSection.module.css";
 
 interface MenuItemProps {
-  item: { name: string; price: number; desc: string };
+  item: { id: number; name: string; price: number; desc: string };
 }
 
 const MenuItem = ({ item }: MenuItemProps) => {
+  const dispatch = useAppDispatch();
+
   return (
     <div className={styles.MenuItem}>
       <Button
@@ -18,7 +22,7 @@ const MenuItem = ({ item }: MenuItemProps) => {
           flexDirection: "column",
         }}
         onClick={() => {
-          console.log(item);
+          dispatch(addToCart(item.id));
         }}
       >
         <div>

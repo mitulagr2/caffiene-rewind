@@ -20,7 +20,7 @@ const MenuSection = () => {
           left: "-97px",
           top: "-97px",
         }}
-        onClick={() => {}}
+        onClick={() => dispatch(setFoodTab(1))}
       >
         <img src="/cold_coffee2.png" alt="cold coffee"></img>
       </Button>
@@ -55,7 +55,7 @@ const MenuSection = () => {
       </div>
       <div className={styles.Listing}>
         {menuInfo[curFoodTab].items.map((item, i) => (
-          <MenuItem key={i} item={{ ...item, price: +item.price }} />
+          <MenuItem key={i} item={{ ...item, id: curFoodTab * 10 + i }} />
         ))}
       </div>
       <div className={styles.box}></div>

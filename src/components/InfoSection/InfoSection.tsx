@@ -1,4 +1,5 @@
-import { useAppSelector } from "../../app/hooks";
+import { useAppSelector, useAppDispatch } from "../../app/hooks";
+import { setFoodTab } from "../../features/menu/menuSlice";
 import mainInfo from "../../content/mainInfo";
 import Button from "../Button/Button";
 import styles from "./InfoSection.module.css";
@@ -9,6 +10,7 @@ import TextTabs from "./fragments/TextTabs";
 const InfoSection = () => {
   console.log("info", mainInfo);
   const curTextTab = useAppSelector((state) => state.menu.curTextTab);
+  const dispatch = useAppDispatch();
 
   return (
     <>
@@ -25,7 +27,7 @@ const InfoSection = () => {
               height: "97px",
               rotate: "180deg",
             }}
-            onClick={() => {}}
+            onClick={() => dispatch(setFoodTab(0))}
           >
             <img src="/hot_coffee.png" alt="hot coffee"></img>
           </Button>
@@ -42,7 +44,7 @@ const InfoSection = () => {
                 marginLeft: "-1px",
                 marginTop: "-1px",
               }}
-              onClick={() => {}}
+              onClick={() => dispatch(setFoodTab(1))}
             >
               <img src="/cold_coffee1.png" alt="cold coffee"></img>
             </Button>
@@ -67,7 +69,7 @@ const InfoSection = () => {
           left: "1655px",
           top: "-1px",
         }}
-        onClick={() => {}}
+        onClick={() => dispatch(setFoodTab(2))}
       >
         <img src="/noodles.png" alt="noodles"></img>
       </Button>
