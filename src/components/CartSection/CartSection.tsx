@@ -20,9 +20,10 @@ const CartSection = () => {
           position: "absolute",
           right: "42px",
           ...(isCheckout && {
-            left: "64px",
+            right: "380px",
           }),
           bottom: "87px",
+          transition: "right 2s",
         }}
         onClick={() => {
           setIsCheckout(!isCheckout);

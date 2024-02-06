@@ -16,6 +16,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  transition: width 2s;
 }
 
 .TopText,
@@ -107,6 +108,7 @@
 .CheckoutWrapper {
   overflow: hidden;
   width: 0;
+  transition: width 2s;
 }
 
 .FullWidth {
