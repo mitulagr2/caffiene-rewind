@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useAppSelector } from "../../app/hooks";
 import mainInfo from "../../content/mainInfo";
 import Button from "../Button/Button";
 import styles from "./InfoSection.module.css";
@@ -8,13 +8,14 @@ import TextTabs from "./fragments/TextTabs";
 
 const InfoSection = () => {
   console.log("info", mainInfo);
-  const [selectedTab, setSelectedTab] = useState(0);
+  const curTextTab = useAppSelector((state) => state.menu.curTextTab);
+
   return (
     <>
       <div className={styles.Wrapper}>
         <div>
           <LaneReel />
-          <TextTabs selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
+          <TextTabs />
         </div>
         <div className={styles.Vertical_Desc}>
           <Button
@@ -51,7 +52,7 @@ const InfoSection = () => {
             </div>
           </div>
           <div className={styles.InfoText}>
-            <div>{mainInfo.textTabs[selectedTab].text}</div>
+            <div>{mainInfo.textTabs[curTextTab].text}</div>
           </div>
           <BestSeller />
         </div>

@@ -1,27 +1,26 @@
+import { useAppSelector, useAppDispatch } from "../../../app/hooks";
+import { setTextTab } from "../../../features/menu/menuSlice";
 import styles from "../InfoSection.module.css";
 import Button from "../../Button/Button";
 import { textTabs } from "../../../content/mainInfo";
-import { SetStateAction } from "react";
 
-interface TextTabProps {
-  selectedTab: number;
-  setSelectedTab: React.Dispatch<SetStateAction<number>>;
-}
-
-const TextTabs = ({ selectedTab, setSelectedTab }: TextTabProps) => {
+const TextTabs = () => {
   console.log(textTabs);
+  const curTextTab = useAppSelector((state) => state.menu.curTextTab);
+  const dispatch = useAppDispatch();
+
   return (
     <div className={styles.TextTabs}>
       <Button
         style={{
-          ...(selectedTab === 0 && { color: "red" }),
+          ...(curTextTab === 0 && { color: "red" }),
           marginTop: "-1px",
           width: "201px",
           marginLeft: "-82px",
           marginBottom: "22px",
           fontSize: "48px",
         }}
-        onClick={() => setSelectedTab(() => 0)}
+        onClick={() => dispatch(setTextTab(0))}
       >
         {textTabs[0].name}
       </Button>
@@ -29,7 +28,7 @@ const TextTabs = ({ selectedTab, setSelectedTab }: TextTabProps) => {
         <Button
           key={i}
           style={{
-            ...(selectedTab === i + 1 && { color: "red" }),
+            ...(curTextTab === i + 1 && { color: "red" }),
             border: "none",
             fontFamily: "'Sedgwick Ave Display', cursive",
             margin: "2px 0",
@@ -37,7 +36,7 @@ const TextTabs = ({ selectedTab, setSelectedTab }: TextTabProps) => {
             padding: "0",
             textWrap: "nowrap",
           }}
-          onClick={() => setSelectedTab(() => i + 1)}
+          onClick={() => dispatch(setTextTab(i + 1))}
         >
           {name}
         </Button>

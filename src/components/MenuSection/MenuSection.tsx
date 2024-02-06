@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useAppSelector, useAppDispatch } from "../../app/hooks";
+import { setFoodTab } from "../../features/menu/menuSlice";
 import menuInfo from "../../content/menuInfo";
 import Button from "../Button/Button";
 import styles from "./MenuSection.module.css";
@@ -6,7 +7,9 @@ import MenuItem from "./fragments/MenuItem";
 
 const MenuSection = () => {
   console.log("menu", menuInfo);
-  const [selectedMenu, setSelectedMenu] = useState(0);
+  const curFoodTab = useAppSelector((state) => state.menu.curFoodTab);
+  const dispatch = useAppDispatch();
+
   return (
     <div className={styles.Wrapper}>
       <Button
@@ -37,21 +40,21 @@ const MenuSection = () => {
           <Button
             key={i}
             style={{
-              ...(selectedMenu === i && { color: "red" }),
+              ...(curFoodTab === i && { color: "red" }),
               padding: "0",
               fontSize: "20px",
               textWrap: "nowrap",
               border: "none",
               marginBottom: "-8px",
             }}
-            onClick={() => setSelectedMenu(() => i)}
+            onClick={() => dispatch(setFoodTab(i))}
           >
             {type}
           </Button>
         ))}
       </div>
       <div className={styles.Listing}>
-        {menuInfo[selectedMenu].items.map((item, i) => (
+        {menuInfo[curFoodTab].items.map((item, i) => (
           <MenuItem key={i} item={{ ...item, price: +item.price }} />
         ))}
       </div>
