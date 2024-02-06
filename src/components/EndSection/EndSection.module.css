@@ -4,5 +4,81 @@
   writing-mode: vertical-lr;
   margin-left: 254px;
   flex: 0 0 144px;
+  overflow: hidden;
   height: 100vh;
+  rotate: 180deg;
+  font-family: "Bayon", sans-serif;
+  font-size: 96px;
+  color: var(--color-tertiary);
+  position: relative;
+  cursor: default;
+}
+
+.TopText {
+  position: absolute;
+  top: -725px;
+  right: -23px;
+  display: flex;
+  -webkit-animation: scroll1 48s linear infinite;
+  -moz-animation: scroll1 48s linear infinite;
+  animation: scroll1 48s linear infinite;
+}
+
+.TopText p {
+  display: inline-block;
+  margin: 0;
+  margin-top: 64px;
+  text-wrap: nowrap;
+}
+
+@-moz-keyframes scroll1 {
+  100% {
+    -moz-transform: translateY(724px);
+  }
+}
+@-webkit-keyframes scroll1 {
+  100% {
+    -webkit-transform: translateY(724px);
+  }
+}
+@keyframes scroll1 {
+  100% {
+    -webkit-transform: translateY(724px);
+    transform: translateY(724px);
+  }
+}
+
+.UnderText {
+  position: absolute;
+  height: 100vh;
+  left: -62px;
+  color: var(--color-secondary);
+  z-index: -1;
+  display: flex;
+  -webkit-animation: scroll2 32s linear infinite;
+  -moz-animation: scroll2 32s linear infinite;
+  animation: scroll2 32s linear infinite;
+}
+
+.UnderText p {
+  display: inline-block;
+  margin: 0;
+  margin-top: 144px;
+}
+
+@-moz-keyframes scroll2 {
+  100% {
+    -moz-transform: translateY(-250px);
+  }
+}
+@-webkit-keyframes scroll2 {
+  100% {
+    -webkit-transform: translateY(-250px);
+  }
+}
+@keyframes scroll2 {
+  100% {
+    -webkit-transform: translateY(-250px);
+    transform: translateY(-250px);
+  }
 }

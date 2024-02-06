@@ -1,92 +1,41 @@
-import { useAppSelector, useAppDispatch } from "../../app/hooks";
-import menuInfo from "../../content/menuInfo";
-import { removeFromCart, addTip } from "../../features/cart/cartSlice";
-import Button from "../Button/Button";
+import { useState } from "react";
 import styles from "./CartSection.module.css";
-
-const itemStyle = {
-  border: "none",
-  padding: "0",
-  display: "flex",
-  width: "100%",
-  justifyContent: "space-between",
-  marginBottom: "32px",
-  alignItems: "baseline",
-};
+import Checkout from "./fragments/Checkout";
+import List from "./fragments/List";
+import Button from "../Button/Button";
 
 const CartSection = () => {
-  const cart = useAppSelector((state) => state.cart);
-  const dispatch = useAppDispatch();
-  const total = Object.entries(cart.items).reduce(
-    (sum, [id, count]) =>
-      (sum += menuInfo[(+id / 10) >> 0].items[+id % 10].price * count),
-    0
-  );
+  const [isCheckout, setIsCheckout] = useState(false);
 
   return (
     <div className={styles.CartWrapper}>
-      <p className={styles.TopText}>Your</p>
-      <p className={styles.BottomText}>Cart</p>
-      <ol type="I">
-        {Object.entries(cart.items).map(([id, count]) => {
-          if (count < 1) return <></>;
-          const item = menuInfo[(+id / 10) >> 0].items[+id % 10];
-          return (
-            <li key={id}>
-              <Button
-                style={itemStyle}
-                onClick={() => dispatch(removeFromCart(+id))}
-              >
-                <p>{item.name}</p>
-                <span>
-                  {count} × ${item.price.toFixed(2)}
-                </span>
-              </Button>
-            </li>
+      <List />
+      <Checkout />
+      <Button
+        style={{
+          rotate: "45deg",
+          width: "48px",
+          height: "48px",
+          padding: "0",
+          position: "absolute",
+          right: "42px",
+          ...(isCheckout && {
+            right: "380px",
+          }),
+          bottom: "87px",
+          transition: "right 2s",
+        }}
+        onClick={() => {
+          setIsCheckout(!isCheckout);
+          Array.from(document.querySelectorAll(".cartSection")).forEach(
+            (section) => section.classList.toggle(styles.FullWidth)
           );
-        })}
-      </ol>
-      <div className={styles.BottomContainer}>
-        <div className={styles.TipBox}>
-          <Button
-            style={{
-              border: "none",
-              width: "100%",
-              justifyContent: "space-between",
-              padding: "0",
-            }}
-            onClick={() => dispatch(addTip())}
-          >
-            <p>Tip Jar</p>
-            <span>${cart.tip.toFixed(2)}</span>
-          </Button>
-          <div className={styles.TipText}>
-            Pull up a chair, take a sip, and let the Caffeine Rewind experience
-            begin!
-          </div>
-        </div>
-
-        <div className={styles.TotalBox}>
-          <div className={styles.TotalText}>Total</div>
-          <div className={styles.Line}></div>
-          <div>${(total + cart.tip).toFixed(2)}</div>
-        </div>
-        <Button
-          style={{
-            rotate: "45deg",
-            width: "48px",
-            height: "48px",
-            padding: "0",
-            position: "absolute",
-            right: "42px",
-            bottom: "87px",
-          }}
-          onClick={() => {}}
-        >
-          <span style={{ rotate: "-45deg" }}>&#129026;</span>
-          {/* &#129024; */}
-        </Button>
-      </div>
+        }}
+      >
+        <span style={{ rotate: "-45deg" }}>
+          {isCheckout ? <>&#129024;</> : <>&#129026;</>}
+        </span>
+      </Button>
     </div>
   );
 };

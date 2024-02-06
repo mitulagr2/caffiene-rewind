@@ -7,9 +7,16 @@
   height: 768px;
   position: relative;
   display: flex;
+}
+
+.ListWrapper {
+  width: 0;
+  overflow: hidden;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  transition: width 2s;
 }
 
 .TopText,
@@ -17,6 +24,7 @@
   font-size: 48px;
   position: absolute;
   margin: 0;
+  cursor: default;
 }
 
 .TopText {
@@ -32,22 +40,19 @@
 .CartWrapper ol {
   padding-inline-start: 64px;
   margin: 64px 32px 8px 0;
-  height: 433px;
   overflow-y: auto;
   -webkit-mask-image: linear-gradient(black, transparent);
   mask-image: linear-gradient(black 88%, transparent);
   width: calc(100% - 96px);
-  -ms-overflow-style: none;
-  scrollbar-width: none;
 }
 
-.CartWrapper ol::-webkit-scrollbar {
-  display: none;
-  width: 0px;
-  background: transparent;
+.Item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
 }
 
-.CartWrapper ol p {
+.Item p {
   margin: 0;
   margin-left: 40px;
   font-family: "Sedgwick Ave Display", cursive;
@@ -66,7 +71,13 @@
   margin-bottom: 49px;
   margin-left: 13px;
 }
-.TipBox p {
+
+.TipTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.TipTitle p {
   margin: 0;
   font-family: "Sedgwick Ave Display", cursive;
   font-size: 32px;
@@ -76,6 +87,7 @@
   font-family: "Hi Melody", sans-serif;
   font-size: 20px;
   margin-top: 16px;
+  cursor: default;
 }
 
 .TotalBox {
@@ -89,6 +101,7 @@
   font-family: "Sedgwick Ave Display", cursive;
   font-size: 48px;
   color: var(--color-secondary);
+  cursor: default;
 }
 .TotalBox .Line {
   position: absolute;
@@ -100,4 +113,15 @@
 }
 .TotalBox div:last-of-type {
   margin-top: -10px;
+  cursor: default;
+}
+
+.CheckoutWrapper {
+  overflow: hidden;
+  width: 0;
+  transition: width 2s;
+}
+
+.FullWidth {
+  width: 512px !important;
 }

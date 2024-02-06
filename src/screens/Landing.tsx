@@ -9,7 +9,6 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import Button from "../components/Button/Button";
 
 const Landing = () => {
-  console.log("landing");
   const navigate = useNavigate();
   let toRotate = false;
 
@@ -125,7 +124,10 @@ const Landing = () => {
   }, []);
   return (
     <div className={styles.Banner}>
-      <Button style={{ color: "red" }} onClick={() => (toRotate = true)}>
+      <Button
+        style={{ color: "var(--color-secondary)" }}
+        onClick={() => (toRotate = true)}
+      >
         Enter
       </Button>
     </div>

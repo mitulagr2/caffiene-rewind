@@ -18,16 +18,21 @@
 .QueryInput {
   margin-left: -1px;
   padding: 0;
-  padding-inline: 24px;
+  padding-inline: 0;
   font-size: 32px;
   padding-top: 8px;
-  /* caret-color: transparent; */
-  border: 1px solid var(--color-text);
+  border: 0 solid var(--color-text) !important;
   font-family: "Hi Melody", sans-serif;
   outline: none;
   background-color: var(--color-background);
   height: 50px;
-  min-width: 219px;
+  width: 0;
+  transition: width 2s, padding-inline 2s, border-width 2s;
+}
+.QueryActive {
+  padding-inline: 24px !important;
+  width: 219px !important;
+  border-width: 1px !important;
 }
 
 .Categories {

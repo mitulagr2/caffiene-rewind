@@ -16,6 +16,7 @@
   font-family: "Bayon", sans-serif;
   font-size: 48px;
   overflow: hidden;
+  cursor: default;
 }
 
 .LaneReel div {
@@ -64,6 +65,7 @@
   color: var(--color-secondary);
   width: 104px;
   padding-top: 211px;
+  cursor: default;
 }
 .Vertical_Desc button {
   position: absolute;
@@ -71,12 +73,9 @@
   right: -1px;
 }
 
-/* .InfoTextWrapper {
-  border: 2px solid red;
-} */
-
 .Banner {
   display: flex;
+  cursor: default;
 }
 .Banner .Title {
   font-family: "Sedgwick Ave Display", cursive;
@@ -104,6 +103,7 @@
   font-family: "Hi Melody", sans-serif;
   font-size: 24px;
   background-color: var(--color-highlight);
+  cursor: default;
 }
 .InfoText div {
   width: 256px;
@@ -126,7 +126,7 @@
   z-index: 1;
 }
 
-.BestSeller svg {
+.RingSVG {
   position: absolute;
   left: -84px;
   top: -84px;
@@ -136,10 +136,72 @@
   animation: spin 32s linear infinite;
 }
 
+.HeartIcon {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  rotate: -45deg;
+  background: url("/public/heart.png") no-repeat;
+  background-position: 0 0;
+  cursor: pointer;
+  transition: background-position 1s steps(28);
+  transition-duration: 0s;
+}
+.HeartIcon.is-active {
+  transition-duration: 1s;
+  background-position: -2800px 0;
+}
+
+.TextMask {
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+}
+
+.ScrollText {
+  cursor: default;
+  position: absolute;
+  top: 219px;
+  z-index: 2;
+  font-family: "Bayon", sans-serif;
+  font-size: 48px;
+  display: flex;
+  text-wrap: nowrap;
+  flex-wrap: wrap;
+  width: 708px;
+  -webkit-animation: sidescroll 32s linear infinite;
+  -moz-animation: sidescroll 32s linear infinite;
+  animation: sidescroll 32s linear infinite;
+}
+.ScrollText p {
+  margin: 0;
+  margin-right: 16px;
+  line-height: 44px;
+}
+
+@-moz-keyframes sidescroll {
+  100% {
+    -moz-transform: translateX(-232px);
+  }
+}
+@-webkit-keyframes sidescroll {
+  100% {
+    -webkit-transform: translateX(-232px);
+  }
+}
+@keyframes sidescroll {
+  100% {
+    -webkit-transform: translateX(-232px);
+    transform: translateX(-232px);
+  }
+}
+
 .TextRing {
   fill: var(--color-secondary);
   font-size: 16px;
   font-family: "Bayon", sans-serif;
+  cursor: default;
 }
 
 @-moz-keyframes spin {
@@ -168,4 +230,5 @@
   position: absolute;
   right: 0;
   top: 128px;
+  cursor: default;
 }

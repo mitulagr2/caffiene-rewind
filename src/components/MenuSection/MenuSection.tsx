@@ -7,24 +7,28 @@ import MenuItem from "./fragments/MenuItem";
 import Search from "./fragments/Search";
 
 const MenuSection = () => {
-  console.log("menu", menuInfo);
-  const { curFoodTab, query } = useAppSelector((state) => state.menu);
+  const { curFoodTab, query, isActiveSearch } = useAppSelector(
+    (state) => state.menu
+  );
   const dispatch = useAppDispatch();
 
-  const filtered = menuInfo.reduce(
-    (list, { items }) => [
-      ...list,
-      ...items.filter(({ name, desc }) =>
-        (name + desc).toLowerCase().includes(query)
-      ),
-    ],
-    [] as {
-      name: string;
-      price: number;
-      desc: string;
-    }[]
-  );
-  const items = query ? filtered : menuInfo[curFoodTab].items;
+  const filtered = query
+    ? menuInfo.reduce(
+        (list, { items }) => [
+          ...list,
+          ...items.filter(({ name, desc }) =>
+            (name + desc).toLowerCase().includes(query)
+          ),
+        ],
+        [] as {
+          name: string;
+          price: number;
+          desc: string;
+        }[]
+      )
+    : [];
+  const items =
+    query && filtered.length > 0 ? filtered : menuInfo[curFoodTab].items;
 
   return (
     <div className={styles.Wrapper}>
@@ -35,6 +39,7 @@ const MenuSection = () => {
           position: "absolute",
           left: "-97px",
           top: "-97px",
+          backgroundColor: "unset",
         }}
         onClick={() => dispatch(setFoodTab(1))}
       >
@@ -45,13 +50,16 @@ const MenuSection = () => {
         {menuInfo.map(({ type }, i) => (
           <Button
             key={i}
+            classname="clickable"
             style={{
-              ...(curFoodTab === i && { color: "red" }),
+              ...((!isActiveSearch || filtered.length < 1) &&
+                curFoodTab === i && { color: "var(--color-secondary)" }),
               padding: "0",
               fontSize: "20px",
               textWrap: "nowrap",
               border: "none",
               marginBottom: "-8px",
+              backgroundColor: "unset",
             }}
             onClick={() => dispatch(setFoodTab(i))}
           >

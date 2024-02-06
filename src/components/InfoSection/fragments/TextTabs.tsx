@@ -5,7 +5,6 @@ import Button from "../../Button/Button";
 import { textTabs } from "../../../content/mainInfo";
 
 const TextTabs = () => {
-  console.log(textTabs);
   const curTextTab = useAppSelector((state) => state.menu.curTextTab);
   const dispatch = useAppDispatch();
 
@@ -13,7 +12,7 @@ const TextTabs = () => {
     <div className={styles.TextTabs}>
       <Button
         style={{
-          ...(curTextTab === 0 && { color: "red" }),
+          ...(curTextTab === 0 && { color: "var(--color-secondary)" }),
           marginTop: "-1px",
           width: "201px",
           marginLeft: "-82px",
@@ -27,14 +26,16 @@ const TextTabs = () => {
       {textTabs.slice(1).map(({ name }, i) => (
         <Button
           key={i}
+          classname="clickable"
           style={{
-            ...(curTextTab === i + 1 && { color: "red" }),
+            ...(curTextTab === i + 1 && { color: "var(--color-secondary)" }),
             border: "none",
             fontFamily: "'Sedgwick Ave Display', cursive",
             margin: "2px 0",
             marginLeft: "24px",
             padding: "0",
             textWrap: "nowrap",
+            backgroundColor: "unset",
           }}
           onClick={() => dispatch(setTextTab(i + 1))}
         >
