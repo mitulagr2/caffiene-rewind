@@ -1,0 +1,140 @@
+.Wrapper {
+  border: 1px solid var(--color-text);
+  height: 448px;
+  margin-top: 384px;
+  margin-left: -287px;
+  position: relative;
+  background-color: var(--color-background);
+}
+
+.Search {
+  position: absolute;
+  height: 60px;
+  left: -1px;
+  top: -156px;
+  display: flex;
+}
+
+.QueryInput {
+  margin-left: -1px;
+  padding: 0;
+  padding-inline: 0;
+  font-size: 32px;
+  padding-top: 8px;
+  border: 0 solid var(--color-text) !important;
+  font-family: "Hi Melody", sans-serif;
+  outline: none;
+  background-color: var(--color-background);
+  height: 50px;
+  width: 0;
+  transition: width 2s, padding-inline 2s, border-width 2s;
+}
+.QueryActive {
+  padding-inline: 24px !important;
+  width: 219px !important;
+  border-width: 1px !important;
+}
+
+.Categories {
+  position: absolute;
+  top: 12px;
+  left: -185px;
+}
+
+.Listing {
+  display: inline-flex;
+  flex-wrap: wrap;
+  padding: 48px 8px;
+  writing-mode: vertical-lr;
+  align-content: flex-start;
+}
+
+.MenuItem {
+  width: min-content;
+  margin: 16px 24px;
+  writing-mode: horizontal-tb;
+  flex-grow: 1;
+}
+
+.ItemPrice {
+  font-family: "Bayon", sans-serif;
+  font-size: 24px;
+  margin-left: 64px;
+}
+
+.ItemDesc {
+  font-family: "Hi Melody", sans-serif;
+  font-size: 24px;
+  text-wrap: wrap;
+  text-align: start;
+}
+
+.Line {
+  border-right: 1px solid var(--color-text);
+  /* width: 1px; */
+  height: 49px;
+  position: absolute;
+  left: -1px;
+  bottom: -49px;
+}
+
+.logo {
+  position: absolute;
+  right: 0;
+  top: -64px;
+}
+
+.box {
+  position: absolute;
+  right: -32px;
+  top: -96px;
+  background: var(--color-highlight);
+  width: 128px;
+  aspect-ratio: 1;
+  -webkit-animation: spin 16s linear infinite;
+  -moz-animation: spin 16s linear infinite;
+  animation: spin 16s linear infinite;
+  clip-path: polygon(
+    100% 50%,
+    78.98% 57.76%,
+    93.3% 75%,
+    71.21% 71.21%,
+    75% 93.3%,
+    57.76% 78.98%,
+    50% 100%,
+    42.24% 78.98%,
+    25% 93.3%,
+    28.79% 71.21%,
+    6.7% 75%,
+    21.02% 57.76%,
+    0% 50%,
+    21.02% 42.24%,
+    6.7% 25%,
+    28.79% 28.79%,
+    25% 6.7%,
+    42.24% 21.02%,
+    50% 0%,
+    57.76% 21.02%,
+    75% 6.7%,
+    71.21% 28.79%,
+    93.3% 25%,
+    78.98% 42.24%
+  );
+}
+
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(-360deg);
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(-360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+}

@@ -1,0 +1,17 @@
+.Button {
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  background-color: var(--color-background);
+  border: 1px solid var(--color-text);
+  font-family: "Bayon", sans-serif;
+  padding: 0 32px;
+  font-size: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 400ms;
+}
+.Button:hover {
+  transform: scale(1.05);
+}

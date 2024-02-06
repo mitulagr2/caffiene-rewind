@@ -1,0 +1,234 @@
+.Wrapper {
+  border: 1px solid var(--color-text);
+  flex: 0 0 1280px;
+  height: 640px;
+  margin-left: 80px;
+  display: flex;
+  position: relative;
+}
+
+.LaneReel {
+  border: 1px solid var(--color-text);
+  width: 176px;
+  height: 385px;
+  margin-left: -1px;
+  margin-top: -1px;
+  font-family: "Bayon", sans-serif;
+  font-size: 48px;
+  overflow: hidden;
+  cursor: default;
+}
+
+.LaneReel div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  -webkit-animation: scroll 2s linear infinite;
+  -moz-animation: scroll 2s linear infinite;
+  animation: scroll 2s linear infinite;
+}
+
+.LaneReel p {
+  margin: -16px 0;
+}
+
+@-moz-keyframes scroll {
+  100% {
+    -moz-transform: translateY(-56px);
+  }
+}
+@-webkit-keyframes scroll {
+  100% {
+    -webkit-transform: translateY(-56px);
+  }
+}
+@keyframes scroll {
+  100% {
+    -webkit-transform: translateY(-56px);
+    transform: translateY(-56px);
+  }
+}
+
+.TextTabs {
+  border: 1px solid var(--color-text);
+  margin-left: -1px;
+  margin-top: -1px;
+  width: 176px;
+  height: 254px;
+}
+
+.Vertical_Desc {
+  writing-mode: vertical-lr;
+  rotate: 180deg;
+  font-family: "Sedgwick Ave Display", cursive;
+  font-size: 64px;
+  color: var(--color-secondary);
+  width: 104px;
+  padding-top: 211px;
+  cursor: default;
+}
+.Vertical_Desc button {
+  position: absolute;
+  top: -97px;
+  right: -1px;
+}
+
+.Banner {
+  display: flex;
+  cursor: default;
+}
+.Banner .Title {
+  font-family: "Sedgwick Ave Display", cursive;
+  font-size: 96px;
+  margin-left: 240px;
+  margin-top: -48px;
+  text-wrap: nowrap;
+}
+.Banner .Subtitle {
+  font-family: "Bayon", sans-serif;
+  font-size: 24px;
+  margin-left: 109px;
+  margin-top: -19px;
+}
+.Banner .Line {
+  border-right: 1px solid var(--color-text);
+  margin-top: -97px;
+}
+
+.InfoText {
+  border: 1px solid var(--color-text);
+  width: 400px;
+  height: 400px;
+  margin-top: -1px;
+  font-family: "Hi Melody", sans-serif;
+  font-size: 24px;
+  background-color: var(--color-highlight);
+  cursor: default;
+}
+.InfoText div {
+  width: 256px;
+  margin-left: 32px;
+  margin-top: 80px;
+}
+
+.BestSeller {
+  border: 1px solid var(--color-text);
+  width: 398px;
+  height: 400px;
+  margin-top: -1px;
+  margin-left: 217px;
+  background-color: var(--color-background);
+  position: relative;
+}
+
+.BestSeller img {
+  position: absolute;
+  z-index: 1;
+}
+
+.RingSVG {
+  position: absolute;
+  left: -84px;
+  top: -84px;
+  mix-blend-mode: luminosity;
+  -webkit-animation: spin 32s linear infinite;
+  -moz-animation: spin 32s linear infinite;
+  animation: spin 32s linear infinite;
+}
+
+.HeartIcon {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  rotate: -45deg;
+  background: url("/public/heart.png") no-repeat;
+  background-position: 0 0;
+  cursor: pointer;
+  transition: background-position 1s steps(28);
+  transition-duration: 0s;
+}
+.HeartIcon.is-active {
+  transition-duration: 1s;
+  background-position: -2800px 0;
+}
+
+.TextMask {
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+}
+
+.ScrollText {
+  cursor: default;
+  position: absolute;
+  top: 219px;
+  z-index: 2;
+  font-family: "Bayon", sans-serif;
+  font-size: 48px;
+  display: flex;
+  text-wrap: nowrap;
+  flex-wrap: wrap;
+  width: 708px;
+  -webkit-animation: sidescroll 32s linear infinite;
+  -moz-animation: sidescroll 32s linear infinite;
+  animation: sidescroll 32s linear infinite;
+}
+.ScrollText p {
+  margin: 0;
+  margin-right: 16px;
+  line-height: 44px;
+}
+
+@-moz-keyframes sidescroll {
+  100% {
+    -moz-transform: translateX(-232px);
+  }
+}
+@-webkit-keyframes sidescroll {
+  100% {
+    -webkit-transform: translateX(-232px);
+  }
+}
+@keyframes sidescroll {
+  100% {
+    -webkit-transform: translateX(-232px);
+    transform: translateX(-232px);
+  }
+}
+
+.TextRing {
+  fill: var(--color-secondary);
+  font-size: 16px;
+  font-family: "Bayon", sans-serif;
+  cursor: default;
+}
+
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.OrderText {
+  color: var(--color-secondary);
+  font-family: "Bayon", sans-serif;
+  writing-mode: vertical-lr;
+  rotate: 180deg;
+  font-size: 48px;
+  position: absolute;
+  right: 0;
+  top: 128px;
+  cursor: default;
+}

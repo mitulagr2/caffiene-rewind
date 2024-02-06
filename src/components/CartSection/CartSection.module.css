@@ -1,0 +1,127 @@
+.CartWrapper {
+  font-family: "Bayon", sans-serif;
+  font-size: 24px;
+  border: 1px solid var(--color-text);
+  margin-left: 64px;
+  flex: 0 0 512px;
+  height: 768px;
+  position: relative;
+  display: flex;
+}
+
+.ListWrapper {
+  width: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  transition: width 2s;
+}
+
+.TopText,
+.BottomText {
+  font-size: 48px;
+  position: absolute;
+  margin: 0;
+  cursor: default;
+}
+
+.TopText {
+  left: 32px;
+  top: -48px;
+}
+
+.BottomText {
+  right: 32px;
+  bottom: -48px;
+}
+
+.CartWrapper ol {
+  padding-inline-start: 64px;
+  margin: 64px 32px 8px 0;
+  overflow-y: auto;
+  -webkit-mask-image: linear-gradient(black, transparent);
+  mask-image: linear-gradient(black 88%, transparent);
+  width: calc(100% - 96px);
+}
+
+.Item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.Item p {
+  margin: 0;
+  margin-left: 40px;
+  font-family: "Sedgwick Ave Display", cursive;
+  font-size: 32px;
+  max-width: 232px;
+  text-align: start;
+  line-height: 20px;
+  text-indent: -24px;
+}
+
+.BottomContainer {
+  margin: 0 32px 71px 45px;
+}
+
+.TipBox {
+  margin-bottom: 49px;
+  margin-left: 13px;
+}
+
+.TipTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.TipTitle p {
+  margin: 0;
+  font-family: "Sedgwick Ave Display", cursive;
+  font-size: 32px;
+}
+
+.TipText {
+  font-family: "Hi Melody", sans-serif;
+  font-size: 20px;
+  margin-top: 16px;
+  cursor: default;
+}
+
+.TotalBox {
+  display: flex;
+  position: relative;
+  font-size: 32px;
+  justify-content: space-between;
+  margin-right: 96px;
+}
+.TotalText {
+  font-family: "Sedgwick Ave Display", cursive;
+  font-size: 48px;
+  color: var(--color-secondary);
+  cursor: default;
+}
+.TotalBox .Line {
+  position: absolute;
+  border-top: 1px solid var(--color-text);
+  width: 256px;
+  bottom: 30px;
+  left: 46px;
+  z-index: -1;
+}
+.TotalBox div:last-of-type {
+  margin-top: -10px;
+  cursor: default;
+}
+
+.CheckoutWrapper {
+  overflow: hidden;
+  width: 0;
+  transition: width 2s;
+}
+
+.FullWidth {
+  width: 512px !important;
+}
